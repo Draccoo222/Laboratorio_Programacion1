@@ -2,15 +2,7 @@ package seamana1.newpackage;
 import java.util.Scanner;
 
 //@author Samuel Vasquez
-/*Cuotas: se requiere un algoritmo que le permita a un banco calcular el valor de la cuota de pago y 
-el total a pagar por un prestamo otorgado a un cliente teniendo en cuenta el plazo de pago establecido (en meses), 
-el interes mensual aplicado al prestamo(simple), la comision por cuota y el porcentaje de seguro mensual aplicado a la cuota.
 
-    **** CUOTAS MENSUALES *******
-    Cuota de Pago Mensual: HNL ###.##
-    Total a Pagar: HNL ###.##
-
-*/
 public class Vasquez_Samuel_Cuotas {
     public static void main(String[] args){
         Scanner enter = new Scanner(System.in);
