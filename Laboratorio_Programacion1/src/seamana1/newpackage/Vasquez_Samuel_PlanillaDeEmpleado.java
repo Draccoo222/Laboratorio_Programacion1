@@ -18,19 +18,15 @@ public class Vasquez_Samuel_PlanillaDeEmpleado {
         hrMes = enter.nextInt();
         System.out.println("Introduzca sus Tarifa por Hora");
         tPH = enter.nextFloat();
-        
-            if(hrMes > 0 && tPH > 0){
-                salr = (hrMes*tPH)/4;
-                
-                System.out.println("------- Boleta del Empleado -------");
-                System.out.println("Nombre del Empleado: " + nom_Usuario);
-                System.out.println("Hora de Trabajo Mensual: " + hrMes);
-                System.out.println("Tarifa por Hora : " + tPH + " Lps.");
-                System.out.println("Salario del Empleado Semanal: " + salr + " Lps.");
-            }
-            else{
-                System.out.println("Porfavor introduzca numeros validos para realizar el calculo correctamente");
-            }
+                 
+        salr = (hrMes*tPH)/4;
+
+        System.out.println("------- Boleta del Empleado -------");
+        System.out.println("Nombre del Empleado: " + nom_Usuario);
+        System.out.println("Hora de Trabajo Mensual: " + hrMes);
+        System.out.println("Tarifa por Hora : " + tPH + " Lps.");
+        System.out.println("Salario del Empleado Semanal: " + salr + " Lps.");
+          
         enter.close();
     }
 }
