@@ -15,9 +15,10 @@ public class Vasquez_Samuel_EstructuraCondicional {
         Random rand = new Random();
         int opc, primo, div;
         String voto, palabra;
-        
+        //Declaracion de variables a usar
         
         do{
+            //Se imrpime el  menu de opciones
             System.out.println("****************Bienvenido****************");
             System.out.println("Introduzca uno de los siguientes numeros para ver que desea hacer");
             System.out.println("1. Detector de Palindromos");
@@ -83,23 +84,30 @@ public class Vasquez_Samuel_EstructuraCondicional {
                     div = entrada.nextInt();
                     int num, suma = 0, dv;
                     dv = div/2;
-                    for (int i = 1; i < div; i++ ){
-                        if (i % 2 == 0) {
+                    for (int i = 1; i < div; i++ ){ //Se usa para sumar los factores del numero introducido
+                        if (i % 2 == 0) { //Suma los factores que son multiplos de 2
                             suma += i;
                         } 
                     }
-                    if(div == suma){
+                    if(div == suma){ //Si los factores terminan dando el numero introdicido es un numero perfecto
                         System.out.println("Es un numero perfecto ");
                     }
                     else{ System.out.println("No es un numero perfecto ");}
+                    break;
                 case 3:
-                    int numGen = rand.nextInt(1, 100);
-                    if(numGen % 2 != 0){
-                        System.out.println(numGen + " Es un numero primo");
+                    int numGen = rand.nextInt(1, 100); //Se genera un numero aleatorio del 1 al 100
+                    String divisores = ""; //Se crea la variable que almacenara los divisores
+                    System.out.println("Se ha generado: " + numGen);
+                    for (int i = 1; i <= numGen; i++) { // Por medio de este for, se obtienen los divisores
+                        if(numGen % i == 0){ // Se usa el mod para obtener los divisores legitimos
+                            divisores += ", " + i; // Los divisores que den residuo de 0 seran agragados a la lista de divisores
+                           
+                        }
+                        
                     }
-                    else{
-                        System.out.println("No es un numero primo");
-                    }
+                    String det = (numGen %2 != 0)? "Es un numero Primo\n" : "No es un numero primo \n" ; // Se  crea un ternario donde se identifica si es un numero primo
+                    System.out.println(det + "Los divisores: " + divisores.substring(2, divisores.length()));
+                    break;
                 case 4:
                 
                     
