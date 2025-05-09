@@ -24,10 +24,5 @@ public class Vasquez_Samuel_Tiempo {
         
         String resul = (sec <=0) ? "Porfavor introduzca un numero mayor a 0" : "Su resultado seria " + String.format("%d", h) + " horas " + String.format("%d", min) + " minutos " + String.format("%d", res) + " segundos " ;
         System.out.println(resul);
-        
-        
-    
-    
-    
     }
 }
