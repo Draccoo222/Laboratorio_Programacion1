@@ -149,6 +149,10 @@ public class Vasquez_Samuel_EstructuraCondicional {
                     cant4++;
                     break;
                 case 5:
+                    System.out.println("Cantidad de veces que se uso el detector de palindromos: " + cant1);
+                    System.out.println("Cantidad de veces que se uso el detector de numero perfecto: " + cant2);
+                    System.out.println("Cantidad de veces que se uso el detector de numeros primos: " + cant3);
+                    System.out.println("Cantidad de veces que se uso el sistema de votaciones : " + cant4);
                     System.out.println("Fin del Programa");
                     break;
                 default:
