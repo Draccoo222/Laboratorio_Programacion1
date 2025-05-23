@@ -13,6 +13,8 @@ public class Vasquez_Samuel_Examen1 {
     public static void main(String[] args){
         Scanner entrada = new Scanner(System.in).useDelimiter("\n");
         int opc;
+        Random compu = new Random();
+        Random compuR = new Random();
         
         do{
         System.out.println("\n=========== Bienvenido ===========");
@@ -27,7 +29,7 @@ public class Vasquez_Samuel_Examen1 {
         
             switch(opc){
                 case 1:
-                    System.out.println("--- Piramide ---");
+                    System.out.println("\n--- Piramide ---");
                     System.out.print("Introduzca la cantidad de fila para la piramide: ");
                     int anch = entrada.nextInt(), suma = 0, num = 1;
                     for (int i = 1; i <= anch; i++) {
@@ -40,7 +42,7 @@ public class Vasquez_Samuel_Examen1 {
                     }
                 break;
                 case 2:
-                    System.out.println("--- Clave ---");
+                    System.out.println("\n--- Clave ---");
                     System.out.print("Introduzca la palabra a codificar: ");
                     String palabra = entrada.next();
                     
@@ -83,11 +85,10 @@ public class Vasquez_Samuel_Examen1 {
                     System.out.println("Descifrado: " + resultado2);
                 break;
                 case 3:
-                    Random compu = new Random();
                     int opcCompu;
                     boolean otra = true;
                     String util;
-                    System.out.println("--- PIEDRA PAPEL O TIJERAS ---");
+                    System.out.println("\n--- PIEDRA PAPEL O TIJERAS ---");
                     
                     do{
                         while(true){
@@ -100,16 +101,17 @@ public class Vasquez_Samuel_Examen1 {
                             }
                         }
 
-                        opcCompu = compu.nextInt(4);
-                        switch(opcCompu){
-                            case 1: 
-                                System.out.println("La computadora ha elegido PIEDRA"); break;
-                            case 2:
-                                System.out.println("La computadora ha elegido PAPEL"); break;
-                            case 3:
-                                System.out.println("La computadora ha elegido TIJERA"); break;
+                        opcCompu = compu.nextInt(3) + 1;
+                        
+                        if(opcCompu == 1){
+                            System.out.println("La computadora ha elegido PIEDRA");
+                        }else if(opcCompu == 2){
+                            System.out.println("La computadora ha elegido PAPEL"); 
+                        }else if (opcCompu == 3){
+                            System.out.println("La computadora ha elegido TIJERA");
+                        
                         }
-
+    
                         if((util.equalsIgnoreCase("Piedra") && opcCompu == 1)||(util.equalsIgnoreCase("Papel") && opcCompu == 2) || (util.equalsIgnoreCase("Tijera") && opcCompu == 3)){
                             System.out.println("\n******HAS EMPATADO******");
                         }else if((util.equalsIgnoreCase("Piedra") && opcCompu == 2)||(util.equalsIgnoreCase("Papel") && opcCompu == 3) || (util.equalsIgnoreCase("Tijera") && opcCompu == 1)){
@@ -123,9 +125,11 @@ public class Vasquez_Samuel_Examen1 {
                             String devuelta = entrada.next();
                             if(devuelta.equalsIgnoreCase("si")){
                                 otra = true;
+                                entrada.nextLine();
                                 break;
                             }else if(devuelta.equalsIgnoreCase("no")){
                                 otra = false;
+                                entrada.nextLine();
                                 break;
                             }else{
                                 System.out.println("\n>>> ERROR, porfavor solo indique si o no\n");
@@ -136,7 +140,31 @@ public class Vasquez_Samuel_Examen1 {
                     
                   break;
                 case 4:
-                    
+                    System.out.println("\n---- Adivinar ----");
+                    int randNum = compuR.nextInt(101), intento = 0, guess = 0;
+                    boolean gana = false;
+                    System.out.println("La computadora ha generado un numero de 1 al 100, tiene 10 intentos para descifrarlo!");
+                    for (int i = 1; i < 11; i++) {
+                        System.out.print("Intento " + i + ": " );
+                        guess = entrada.nextInt();
+                        if(guess != randNum &&  guess > randNum){
+                            System.out.println("Su intento es mayor a lo generado por la computadora");
+                        }else if(guess != randNum &&  guess < randNum){
+                            System.out.println("Su intento es menor a lo generado por la computadora");
+                        }else{
+                            gana = true;
+                            intento = i;
+                            break;
+                        }
+                    }
+                    if(gana){
+                        System.out.println("Bien Hecho! Ha adivinado correctamente!");
+                        System.out.println("Lo hizo en el intento " + intento);
+                    }else{
+                       System.out.println("Ha perdido!!");
+                       System.out.println("El generado numero es: " + randNum);
+                    }
+                    break;
                 case 5: 
                     System.out.println("\n>>>Fin del Programa");
                     break;
