@@ -14,13 +14,13 @@ public class Vasquez_Samuel_Examen1 {
         int opc;
         
         do{
-        System.out.println("\n===== Bienvenido =====");
+        System.out.println("\n=========== Bienvenido ===========");
         System.out.println("[1] Piramide");
         System.out.println("[2] Clave");
         System.out.println("[3] Juego Piedra Papel y Tijera");
         System.out.println("[4] Adivinar");
         System.out.println("[5] Salir");
-        System.out.println("======================");
+        System.out.println("==================================");
         System.out.print("Introduzca la opcion que desea (representado en numeros): ");
         opc = entrada.nextInt();
         
@@ -39,7 +39,48 @@ public class Vasquez_Samuel_Examen1 {
                     }
                 break;
                 case 2:
-                        
+                    System.out.println("--- Clave ---");
+                    System.out.print("Introduzca la palabra a codificar: ");
+                    String palabra = entrada.next();
+                    
+                    String resultado = "", resultado2 = "";
+                    
+                    for (int i = 0; i < palabra.length(); i++) {
+                        char letra = palabra.charAt(i);
+                        if(Character.isLetter(letra)){
+                            if(letra >= 'a' && letra <= 'z'){
+                                char cifrado = (char) ('z' - (letra - 'a'));
+                                resultado +=  cifrado;
+                            }else if(letra >= 'A' && letra <= 'Z'){
+                               char cifrado = (char) ('Z' - (letra - 'A'));
+                                resultado += cifrado;
+                            }
+                        }else{
+                            resultado += letra;
+                        }
+                    }
+                    System.out.println("Cifrado: " + resultado);
+                    
+                    
+                    System.out.print("\nIntroduzca la palabra que quiere decodificar: ");
+                    String palabra2 = entrada.next();
+                    
+                    for (int i = 0; i < palabra2.length(); i++) {
+                        char letra = palabra2.charAt(i);
+                        if(Character.isLetter(letra)){
+                            if(letra >= 'a' && letra <= 'z'){
+                                char cifrado = (char) ('a' - (letra - 'z'));
+                                resultado2 +=  cifrado;
+                            }else if(letra >= 'A' && letra <= 'Z'){
+                               char cifrado = (char) ('A' - (letra - 'Z'));
+                                resultado2 += cifrado;
+                            }
+                        }else{
+                            resultado2 += letra;
+                        }
+                    }
+                    System.out.println("Descifrado: " + resultado2);
+                break;
                 case 3:
                     
                 case 4:
