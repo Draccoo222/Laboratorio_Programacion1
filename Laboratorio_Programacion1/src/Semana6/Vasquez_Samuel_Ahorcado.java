@@ -10,7 +10,7 @@ package Semana6;
  */
 public class Vasquez_Samuel_Ahorcado extends javax.swing.JFrame {
      public static String[] palabras = {"palindromo","objetivo","sistema","grafico","computadora","militar"
-             ,"Mago","Avioneta","Audifono","Columpio"};
+             ,"mago","avioneta","audifono","columpio"};
     /**
      * Creates new form Vasquez_Samuel_Ahorcado
      */
