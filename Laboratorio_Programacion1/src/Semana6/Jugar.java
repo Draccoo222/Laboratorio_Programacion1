@@ -12,7 +12,8 @@ import java.util.Random;
  */
 public class Jugar extends javax.swing.JFrame {
 
-    String[] palabrasJugar = Vasquez_Samuel_Ahorcado.palabras;
+    String[] palabrasJugar;
+   
     Random rn = new Random();
     String palabra, palabraOculta = "";
     int intentos;
@@ -20,6 +21,15 @@ public class Jugar extends javax.swing.JFrame {
      * Creates new form Jugar
      */
     public Jugar() {
+        for (int i = 0; i < Vasquez_Samuel_Ahorcado.palabras.length; i++) {
+             if(!Cambiar_Palabra.nuevasPalabra[i].equals("")){
+                 palabrasJugar = Cambiar_Palabra.nuevasPalabra;
+             }else{
+                  palabrasJugar = Vasquez_Samuel_Ahorcado.palabras;
+             }
+        }
+       
+       
         initComponents();
         intentos = 5;
         palabra = palabrasJugar[rn.nextInt(palabrasJugar.length)];

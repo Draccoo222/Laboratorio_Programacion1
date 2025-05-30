@@ -9,7 +9,7 @@ package Semana6;
  * @author unwir
  */
 public class Cambiar_Palabra extends javax.swing.JFrame {
-    String[] nuevasPalabra = new String[10];
+    public static String[] nuevasPalabra = new String[10];
     Vasquez_Samuel_Ahorcado menu = new Vasquez_Samuel_Ahorcado();
     int cont = 0;
     /**
